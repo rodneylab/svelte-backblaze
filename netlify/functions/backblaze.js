@@ -4,14 +4,11 @@ const authoriseBackblaze = async () => {
 	try {
 		const response = await axios({
 			url: 'https://api.backblazeb2.com/b2api/v2/b2_authorize_account',
-			method: 'POST',
+			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json',
 				Authorization: `${process.env.BACKBLAZE_ACCOUNT_ID}:${process.env.BACKBLAZE_ACCOUNT_AUTH_TOKEN}`
 			},
-			data: {
-				accountId: process.env.BACKBLAZE_ACCOUNT_ID
-			}
 		});
 		return {successful: true, message: response.apiUrl}
 	} catch (error) {
