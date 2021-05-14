@@ -5,7 +5,7 @@
 <h1>Contact</h1>
 
 <ul>
-	<li>Email: ask@rodneylab.com</li>
+	<li>Email: {import.meta.env.VITE_CONTACT_EMAIL}</li>
 	<li>
 		Twitter: <a
 			href={`https://twitter.com/messages/compose?recipient_id=${
