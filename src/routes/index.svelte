@@ -9,6 +9,7 @@
 			body: JSON.stringify({ greeting: 'hello' })
 		};
 		const response = await fetch('/.netlify/functions/backblaze', options);
+		console.log('response ', response);
 		console.log('json: ', await response.json());
 	}
 	let data;
@@ -27,17 +28,30 @@
 
 <svelte:head>
 	<title>svelte-backblaze</title>
+	<meta
+		name="description"
+		content="svelte-backblaze: app for testing svelte-kit with backblaze and netlify functions"
+	/>
 </svelte:head>
 <h1>svelte-backblaze</h1>
-<label>
+<!-- <label>
 	<input bind:files type="file" />
 </label>
 <form method="post" enctype="multipart/form-data">
 	<label>
 		<input type="file" />
 	</label>
-</form>
-<button on:click={handleClick}>
-	Clicked {count}
-	{count === 1 ? 'time' : 'times'}
-</button>
+</form> -->
+<span>
+	<button on:click={handleClick}>
+		Clicked {count}
+		{count === 1 ? 'time' : 'times'}
+	</button>
+</span>
+
+<style>
+	button {
+		padding: 1em;
+		font-size: 1em;
+	}
+</style>
