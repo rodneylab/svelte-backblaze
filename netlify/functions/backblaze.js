@@ -17,7 +17,7 @@ const authoriseBackblaze = async () => {
 	} catch (error) {
 		let message;
 		if (error.response) {
-			message = `Server responded with non 2xx code: ${error.response.data}`;
+			message = `Server responded with non 2xx code: ${JSON.stringify(error.response.data)}`;
 		} else if (error.request) {
 			message = `No response received: ${error.request}`;
 		} else {
