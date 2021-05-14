@@ -9,7 +9,7 @@
 			body: JSON.stringify({ greeting: 'hello' })
 		};
 		const response = await fetch('/.netlify/functions/backblaze', options);
-		console.log('response ', response);
+		console.log('response: ', response);
 		console.log('json: ', await response.json());
 	}
 	let data;
