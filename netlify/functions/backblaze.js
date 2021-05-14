@@ -33,5 +33,5 @@ exports.handler = async (event) => {
 		return { statusCode: 405, body: 'Method not allowed.' };
 	}
 
-	return { statusCode: 200, body: JSON.stringify(await authoriseBackblaze()) };
+	return { statusCode: 200, body: await JSON.stringify(await authoriseBackblaze()) };
 };
