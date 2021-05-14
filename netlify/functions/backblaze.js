@@ -2,12 +2,13 @@ const axios = require('axios');
 
 const authoriseBackblaze = async () => {
 	try {
+		const authorsationToken = btoa(`${process.env.BACKBLAZE_ACCOUNT_ID}:${process.env.BACKBLAZE_ACCOUNT_AUTH_TOKEN}`);
 		const response = await axios({
 			url: 'https://api.backblazeb2.com/b2api/v2/b2_authorize_account',
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json',
-				Authorization: `${process.env.BACKBLAZE_ACCOUNT_ID}:${process.env.BACKBLAZE_ACCOUNT_AUTH_TOKEN}`
+				Authorization: authorsationToken,
 			},
 		});
 		return {successful: true, message: response.apiUrl}
