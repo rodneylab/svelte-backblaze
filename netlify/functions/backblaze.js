@@ -14,7 +14,7 @@ const authoriseBackblaze = async () => {
 				Authorization: `Basic ${authorisationToken}`
 			}
 		});
-		return { successful: true, message: response.json().apiUrl };
+		return { successful: true, message: JSON.stringify(response) };
 	} catch (error) {
 		let message;
 		if (error.response) {
