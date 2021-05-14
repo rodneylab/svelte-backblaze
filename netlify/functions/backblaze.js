@@ -10,11 +10,10 @@ const authoriseBackblaze = async () => {
 			url: 'https://api.backblazeb2.com/b2api/v2/b2_authorize_account',
 			method: 'GET',
 			headers: {
-				'Content-Type': 'application/json',
 				Authorization: `Basic ${authorisationToken}`
 			}
 		});
-		return { successful: true, message: JSON.stringify(response) };
+		return { successful: true, message: response };
 	} catch (error) {
 		let message;
 		if (error.response) {
