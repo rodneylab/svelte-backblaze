@@ -1,7 +1,13 @@
 <script>
+	import SEO from '$lib/components/SEO/index.svelte';
+
+	let title = 'Contact';
+	let metadescription = 'svelte-backblaze: contact Rodney Lab';
+
 	const telegramUsername = import.meta.env.VITE_TELEGRAM_USERNAME;
 </script>
 
+<SEO {title} {metadescription} />
 <h1>Contact</h1>
 
 <ul>

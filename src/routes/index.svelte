@@ -1,4 +1,9 @@
 <script>
+	import SEO from '$lib/components/SEO/index.svelte';
+
+	let title = 'Home';
+	let metadescription =
+		'svelte-backblaze: app for trying out svelte-kit with backblaze and netlify functions';
 	let count = 0;
 
 	async function handleClick() {
@@ -27,12 +32,13 @@
 </script>
 
 <svelte:head>
-	<title>svelte-backblaze</title>
-	<meta
+	<!-- <title>svelte-backblaze</title> -->
+	<!-- <meta
 		name="description"
-		content="svelte-backblaze: app for testing svelte-kit with backblaze and netlify functions"
-	/>
+		content=""
+	/> -->
 </svelte:head>
+<SEO {title} {metadescription} />
 <h1>svelte-backblaze</h1>
 <!-- <label>
 	<input bind:files type="file" />

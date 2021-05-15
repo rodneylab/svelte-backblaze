@@ -1,7 +1,11 @@
+<script>
+	import { COPYRIGHT_ENTITY } from '$lib/constants/entities.js';
+</script>
+
 <header>
 	<nav>
-		<a href=".">Home</a>
-		<a href="contact">Contact</a>
+		<a href="/.">Home</a>
+		<a href="/contact">Contact</a>
 	</nav>
 </header>
 <main>
@@ -9,7 +13,7 @@
 </main>
 <footer>
 	<p>
-		Copyright {'\u00A9'} 2021 Rodney Johnson.
+		Copyright {COPYRIGHT_ENTITY} 2021 Rodney Johnson.
 	</p>
 	<ul>
 		<li>
