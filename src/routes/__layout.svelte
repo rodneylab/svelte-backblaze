@@ -33,7 +33,7 @@
 		<li>
 			<a
 				aria-label="Open the Rodney Lab LinkedIn page"
-				href={`https://uk.linkedin.com/in/${import.meta.env.VITE_LINKED_PROFILE}`}>l</a
+				href={`https://uk.linkedin.com/in/${import.meta.env.VITE_LINKEDIN_PROFILE}`}>l</a
 			>
 		</li>
 		<li>
