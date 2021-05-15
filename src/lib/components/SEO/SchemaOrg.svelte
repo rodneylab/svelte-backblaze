@@ -1,7 +1,7 @@
 <script>
 	const schemaOrgWebsite = {
 		'@type': 'WebSite',
-		'@id': `${import.meta.env.VITE_SITE_URL}/#website`,
+		'@id': `${import.meta.env.VITE_SITE_URL}/#website`
 	};
 	const schemaOrgArray = [schemaOrgWebsite];
 	const schemaOrgObject = {
@@ -13,6 +13,8 @@
 
 <svelte:head>
 	<script type="application/ld+json">
-		{jsonString}
+		{
+			jsonString;
+		}
 	</script>
 </svelte:head>

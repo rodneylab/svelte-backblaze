@@ -1,10 +1,12 @@
 <script>
 	import OpenGraph from './OpenGraph.svelte';
 	import SchemaOrg from './SchemaOrg.svelte';
+	import Twitter from './Twitter.svelte';
 	import website from '$lib/config/website.js';
+	import { VERTICAL_LINE_ENTITY } from '$lib/constants/entities.js';
 	export let title;
 	export let metadescription;
-	const { ogLanguage, siteTitle } = website;
+	const { author, ogLanguage, siteTitle } = website;
 	const siteUrl = import.meta.env.VITE_SITE_URL;
 	const pageTitle = `${siteTitle} ${VERTICAL_LINE_ENTITY} ${title}`;
 	// const image = {
@@ -22,7 +24,14 @@
 		siteTitle,
 		siteUrl
 	};
-	import { VERTICAL_LINE_ENTITY } from '$lib/constants/entities.js';
+	const twitterProps = {
+		author,
+		twitterUsername: import.meta.env.VITE_TWITTER_USERNAME,
+		// image,
+		metadescription,
+		pageTitle,
+		siteUrl
+	};
 </script>
 
 <svelte:head>
@@ -35,4 +44,5 @@
 	<html lang="en-GB" />
 	<SchemaOrg />
 	<OpenGraph {...openGraphProps} />
+	<Twitter {...twitterProps} />
 </svelte:head>
