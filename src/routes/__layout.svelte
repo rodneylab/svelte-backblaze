@@ -1,5 +1,7 @@
 <script>
+	import environmentVariables from '$lib/constants/environmentVariables';
 	import { COPYRIGHT_ENTITY } from '$lib/constants/entities.js';
+	const { facebookPage, githubPage, linkedinProfile, twitterUsername } = environmentVariables;
 </script>
 
 <header>
@@ -19,27 +21,24 @@
 		<li>
 			<a
 				aria-label="Go to the Rodney Lab Facebook page"
-				href={`https://www.facebook.com/${import.meta.env.VITE_FACEBOOK_PAGE}`}>f</a
+				href={`https://www.facebook.com/${facebookPage}`}>f</a
 			>
 		</li>
 		<li>
 			<a
 				aria-label="Open the Rodney Lab twitter feed"
-				href={`https://twitter.com/intent/user?screen_name=${
-					import.meta.env.VITE_TWITTER_USERNAME
-				}`}>t</a
+				href={`https://twitter.com/intent/user?screen_name=${twitterUsername}`}>t</a
 			>
 		</li>
 		<li>
 			<a
 				aria-label="Open the Rodney Lab LinkedIn page"
-				href={`https://uk.linkedin.com/in/${import.meta.env.VITE_LINKEDIN_PROFILE}`}>l</a
+				href={`https://uk.linkedin.com/in/${linkedinProfile}`}>l</a
 			>
 		</li>
 		<li>
-			<a
-				aria-label="Open the Rodney Lab Git Hub repo"
-				href={`https://github.com/${import.meta.env.VITE_GITHUB_PAGE}`}>g</a
+			<a aria-label="Open the Rodney Lab Git Hub repo" href={`https://github.com/${githubPage}`}
+				>g</a
 			>
 		</li>
 	</ul>
