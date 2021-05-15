@@ -6,7 +6,7 @@
 	import { VERTICAL_LINE_ENTITY } from '$lib/constants/entities.js';
 	export let title;
 	export let metadescription;
-	const { author, ogLanguage, siteTitle } = website;
+	const { author, ogLanguage, siteLanguage, siteTitle, siteTitleAlt } = website;
 	const siteUrl = import.meta.env.VITE_SITE_URL;
 	const pageTitle = `${siteTitle} ${VERTICAL_LINE_ENTITY} ${title}`;
 	// const image = {
@@ -22,6 +22,13 @@
 		ogLanguage,
 		pageTitle,
 		siteTitle,
+		siteUrl
+	};
+	const schemaOrgProps = {
+		author,
+		siteLanguage,
+		siteTitle,
+		siteTitleAlt,
 		siteUrl
 	};
 	const twitterProps = {
@@ -41,8 +48,8 @@
 		name="robots"
 		content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
 	/>
-	<html lang="en-GB" />
-	<SchemaOrg />
+	<html lang={siteLanguage} />
+	<SchemaOrg {...schemaOrgProps} />
 	<OpenGraph {...openGraphProps} />
 	<Twitter {...twitterProps} />
 </svelte:head>
