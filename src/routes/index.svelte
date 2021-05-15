@@ -44,8 +44,8 @@
 </form> -->
 <span>
 	<button on:click={handleClick}>
-		Clicked {count}
-		{count === 1 ? 'time' : 'times'}
+		Clicked
+		{count === 1 ? ' once' : ` ${count} times`}
 	</button>
 </span>
 
